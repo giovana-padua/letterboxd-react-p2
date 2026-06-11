@@ -1,0 +1,728 @@
+/* ===== base.css =====
+   Variáveis, reset, layout global, formulários e utilitários gerais.
+*/
+
+:root {
+  --azul-fundo: #07131d;
+  --azul-card: #111f2c;
+  --azul-card-2: #18293a;
+  --azul-borda: #284157;
+  --azul-claro: #79c7ff;
+  --verde: #00c853;
+  --verde-escuro: #009f45;
+  --laranja: #ff9f1c;
+  --laranja-escuro: #f47c20;
+  --texto: #f6fbff;
+  --texto-suave: #a9bdcc;
+  --erro: #ff8a8a;
+  --sombra: 0 18px 45px rgba(0, 0, 0, .28);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0, 200, 83, .13), transparent 28%),
+    radial-gradient(circle at 82% 12%, rgba(255, 159, 28, .13), transparent 24%),
+    linear-gradient(180deg, #07131d 0%, #0c1823 55%, #07131d 100%);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { width: min(1240px, 94%); margin: 0 auto; padding: 26px 0; }
+
+.hero, .painel {
+  background: linear-gradient(145deg, rgba(24, 41, 58, .95), rgba(17, 31, 44, .95));
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(121, 199, 255, .16);
+  box-shadow: var(--sombra);
+}
+
+.hero-letterboxd {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-letterboxd::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255,159,28,.28), transparent 62%);
+}
+
+.hero h1 { font-size: clamp(34px, 5vw, 58px); line-height: .95; letter-spacing: -1px; margin: 10px 0; }
+
+.hero p { color: #dbe9f4; font-size: 18px; max-width: 760px; }
+
+.eyebrow { color: var(--laranja); font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: .16em; }
+
+.texto-suave { color: var(--texto-suave); }
+
+.texto-linha { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+input, textarea, select, button {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(121, 199, 255, .15);
+  font-size: 15px;
+  outline: none;
+}
+
+input, textarea, select { background: #f8fbff; color: #07131d; }
+
+input:focus, textarea:focus, select:focus { border-color: var(--verde); box-shadow: 0 0 0 4px rgba(0, 200, 83, .14); }
+
+textarea { min-height: 120px; resize: vertical; }
+
+button {
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+  color: #fff;
+  font-weight: 900;
+  border: none;
+  transition: transform .18s ease, filter .18s ease;
+}
+
+button:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+button.secondary { background: linear-gradient(135deg, #2d4e68, #203849); }
+
+button.danger { background: linear-gradient(135deg, #d94444, #a61f1f); }
+
+.btn-link { cursor: pointer; font-size: 16px; }
+
+.link-card { display: inline-block; color: var(--verde); font-weight: 900; margin-top: 10px; }
+
+.compacto-link { color: var(--laranja); }
+
+.alert { background: rgba(121, 199, 255, .10); border: 1px solid rgba(121, 199, 255, .15); padding: 13px 15px; border-radius: 14px; margin: 14px 0; color: #dceeff; }
+
+.erro { color: var(--erro); }
+
+.sucesso { color: #77ff99; }
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+.titulo-secao { margin: 26px 0 12px; font-size: 26px; }
+
+.cabecalho-pagina { margin-bottom: 20px; }
+
+.cabecalho-pagina h1 { font-size: 38px; margin: 8px 0; }
+
+.media-info {
+  padding-top: 12px;
+}
+
+.media-info h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  min-height: 40px;
+}
+
+.media-tag {
+  display: inline-block;
+  background: rgba(31, 156, 255, 0.18);
+  color: #d9efff;
+  border: 1px solid rgba(31, 156, 255, 0.24);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.media-info p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #d7e4ee;
+}
+
+.media-artist {
+  color: #ffcb7a !important;
+}
+
+.tagline {
+  color: var(--laranja);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .88rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.chips span {
+  background: rgba(0, 200, 83, .13);
+  border: 1px solid rgba(0, 200, 83, .18);
+  color: #9dffbd;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-weight: 700;
+}
+
+.chips-muted span {
+  background: rgba(121, 199, 255, .12);
+  border-color: rgba(121, 199, 255, .16);
+  color: #bfe1f9;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--verde), var(--laranja));
+  color: #06121c;
+  font-weight: 900;
+}
+
+.link-button.secondary,
+.secondary.link-button {
+  background: rgba(121, 199, 255, .14);
+  color: #dcefff;
+}
+
+.rating-numero {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: var(--laranja);
+  line-height: 1;
+}
+
+.rating-extra {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 14px;
+  color: #dce8f2;
+}
+
+/* ===== Correção final: carrossel contido e sem estourar a tela ===== */
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container-lb {
+  width: min(1400px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.lb-eyebrow {
+  color: #00c853;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .78rem;
+}
+
+.lm-input { min-height: 54px; border-radius: 12px !important; font-size: 1rem; }
+
+.lm-alert {
+  background: rgba(121,199,255,.10);
+  border: 1px solid rgba(121,199,255,.18);
+  color: #d7ebff;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.media-artist { color: #ffd28a; font-size: .88rem; }
+
+.lb-voltar-topo {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #9fb7c8;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.lb-voltar-topo:hover { color: #fff; }
+
+.chips-muted span { background: rgba(121,199,255,.12); color: #cfe8fb; border-color: rgba(121,199,255,.18); }
+
+.linha-destaque { width: 60px; height: 7px; background: linear-gradient(90deg, #00c853, #ff9f1c); margin: 18px 0; }
+
+.rating-grande { display: block; font-size: 2.6rem; color: #fff; }
+
+.section-title-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+
+.section-title-row a { color: #00c853; font-weight: 900; }
+
+/* Utilitários leves no estilo Bootstrap para a versão acadêmica sem dependência externa */
+
+.container-fluid { width: 100%; padding-left: 16px; padding-right: 16px; }
+
+.ms-auto { margin-left: auto; }
+
+.d-flex { display: flex; }
+
+.align-items-center { align-items: center; }
+
+.align-items-end { align-items: flex-end; }
+
+.gap-1 { gap: .25rem; }
+
+.gap-2 { gap: .5rem; }
+
+.gap-3 { gap: 1rem; }
+
+.w-100 { width: 100%; }
+
+.fw-bold { font-weight: 800; }
+
+.mt-3 { margin-top: 1rem; }
+
+.mb-0 { margin-bottom: 0; }
+
+.mb-1 { margin-bottom: .25rem; }
+
+.mb-2 { margin-bottom: .5rem; }
+
+.mb-3 { margin-bottom: 1rem; }
+
+.mb-4 { margin-bottom: 1.5rem; }
+
+.mb-5 { margin-bottom: 3rem; }
+
+.py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+
+.row { display: flex; flex-wrap: wrap; margin-left: -.5rem; margin-right: -.5rem; }
+
+.row > * { padding-left: .5rem; padding-right: .5rem; }
+
+.col { flex: 1 0 0%; }
+
+.col-auto { flex: 0 0 auto; width: auto; }
+
+.col-6 { flex: 0 0 auto; width: 50%; }
+
+.col-12 { flex: 0 0 auto; width: 100%; }
+
+.g-2 { row-gap: .5rem; }
+
+.g-3 { row-gap: 1rem; }
+
+.form-control, .form-select { width: 100%; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; border: none; text-decoration: none; }
+
+.btn-success { background: #00c853; color: #07131d; }
+
+.btn-warning { background: #ff9f1c; color: #07131d; }
+
+.alert { border-radius: 14px; }
+
+/* =========================================================
+   AJUSTE FINAL — visual mais clean + carrosséis discretos
+   Mantém as funcionalidades, mas reduz brilho/gradientes.
+   ========================================================= */
+
+:root {
+  --lm-bg-clean: #14181c;
+  --lm-bg-soft: #1b222b;
+  --lm-card: #1f2933;
+  --lm-border: #2c3440;
+  --lm-text: #ffffff;
+  --lm-muted: #9ab;
+  --lm-green: #00e054;
+  --lm-orange: #ff8000;
+}
+
+html, body, #root {
+  background: var(--lm-bg-clean) !important;
+  color: var(--lm-text) !important;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(0, 224, 84, .06), transparent 26rem),
+    var(--lm-bg-clean) !important;
+}
+
+.container-lb {
+  width: min(1500px, calc(100% - 72px)) !important;
+  margin: 0 auto !important;
+}
+
+.lb-eyebrow {
+  color: var(--lm-green) !important;
+  letter-spacing: .34em !important;
+  font-size: .78rem !important;
+}
+
+.lm-input {
+  height: 52px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: none !important;
+}
+
+.lm-input:focus {
+  border-color: var(--lm-green) !important;
+  box-shadow: 0 0 0 3px rgba(0,224,84,.12) !important;
+}
+
+.lm-alert {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 12px !important;
+  color: #b9ccdb !important;
+}
+
+.media-artist {
+  color: #ffd08a !important;
+  font-size: .88rem !important;
+}
+
+/* ===== Player por faixa na aba Faixas ===== */
+
+/* ===== Swiper dos carrosséis ===== */
+
+/* =====================================================
+   Player Deezer clean - música/álbum
+   ===================================================== */
+
+.album-info-card-clean {
+  margin: 1rem 0;
+  max-width: 620px;
+  padding: 0.9rem;
+  border: 1px solid rgba(125, 165, 205, 0.22);
+  border-radius: 18px;
+  background: rgba(14, 26, 38, 0.72);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.album-info-card-clean img {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.album-info-card-clean strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.album-info-card-clean small {
+  display: block;
+  color: #afd4ff;
+  margin-top: 0.15rem;
+}
+
+/* =====================================================
+   HOME + NAVBAR CLEAN STYLE
+   Inspirado no layout clean do Letterboxd, mantendo as
+   cores do projeto e sem alterar backend.
+   ===================================================== */
+
+.lb-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  width: 72px;
+  height: 32px;
+  position: relative;
+}
+
+.lb-dots i {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: block;
+  margin-left: -4px;
+}
+
+.lb-dots i:nth-child(1) { background: #ff8000; margin-left: 0; }
+
+.lb-dots i:nth-child(2) { background: #00e054; }
+
+.lb-dots i:nth-child(3) { background: #40bcf4; }
+
+.album-info-card-clean {
+  max-width: 410px;
+  margin: 18px 0 18px;
+  padding: 14px;
+  border: 1px solid rgba(103, 145, 179, .38);
+  background: rgba(16, 30, 43, .84);
+  border-radius: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,.22);
+}
+
+.album-info-card-clean img {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.album-info-card-clean strong {
+  display: block;
+  color: #fff;
+  font-size: 1.02rem;
+  line-height: 1.15;
+}
+
+.album-info-card-clean small {
+  display: block;
+  color: #a9c8df;
+  margin-top: 3px;
+}
+
+.mini-relacao-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(27, 39, 52, .94);
+  border: 1px solid rgba(100, 132, 160, .32);
+  color: #d9ecfb;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.mini-relacao-card:hover {
+  background: rgba(42, 58, 74, .98);
+  color: #fff;
+}
+
+.mini-relacao-card.compacto {
+  padding: 8px;
+}
+
+.mini-relacao-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: #08121c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bcd5e8;
+  font-weight: 900;
+}
+
+.mini-relacao-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-relacao-card strong,
+.mini-relacao-card small,
+.mini-relacao-card em {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-relacao-card strong {
+  color: #fff;
+  line-height: 1.15;
+}
+
+.mini-relacao-card small {
+  color: #abc2d8;
+  font-size: .82rem;
+  margin-top: 3px;
+}
+
+.mini-relacao-card em {
+  color: #ffd071;
+  font-size: .76rem;
+  font-style: normal;
+  margin-top: 4px;
+}
+
+/* ===== Navbar final ===== */
+
+/* mobile */
+
+/* =========================================================
+   AJUSTES FINAIS - NAVBAR + RESULTADOS DA BUSCA
+   ========================================================= */
+
+/* Navbar: logo esquerda, links centralizados, busca + perfil na direita */
+
+/* Resultados da busca: impede cards sobrepostos/estourando */
+
+/* Barra de busca da Home: centralização vertical */
+
+/* Responsivo */
+
+/* =====================================================
+   Correção: Resenhas + música relacionada buscada na Deezer
+   ===================================================== */
+
+.musica-selecionada-form {
+  margin: 4px 0 18px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 200, 83, .08);
+  border: 1px solid rgba(0, 200, 83, .18);
+}
+
+.btn-limpar-musica {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(121,199,255,.13) !important;
+  color: #d9efff !important;
+  font-weight: 900;
+}
+
+.musicas-recomendadas-panel h2 {
+  font-size: 1.25rem;
+  color: #d7d4e7;
+  margin-bottom: 16px;
+}
+
+.musica-sugerida-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid rgba(121,199,255,.14);
+  background: rgba(7, 19, 29, .25) !important;
+  border-radius: 12px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.musica-sugerida-card:hover,
+.musica-sugerida-card.selecionada {
+  border-color: rgba(0, 200, 83, .75);
+  background: rgba(0, 200, 83, .10) !important;
+  transform: none;
+}
+
+.musica-recomendada-destaque {
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 200, 83, .08);
+  border: 1px solid rgba(0, 200, 83, .20);
+}
+
+/* =====================================================
+   Correção: Player Deezer funcional com progresso/volume
+   ===================================================== */
+
+/* ===== Correções: cards clicáveis + busca de música na resenha ===== */
+
+.mini-musica-capa {
+  width: 58px;
+  height: 58px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: rgba(7, 19, 29, .9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d8ebff;
+  font-weight: 900;
+}
+
+.mini-musica-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-musica-selecionada-card strong,
+.mini-musica-selecionada-card small,
+.mini-musica-selecionada-card em {
+  display: block;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-musica-selecionada-card strong { color: #fff; font-weight: 900; }
+
+.mini-musica-selecionada-card small { color: #a9c8df; }
+
+.mini-musica-selecionada-card em { color: #ffcb7a; font-style: normal; font-size: .82rem; }
+
+.musicas-recomendadas-v2 {
+  min-height: 260px;
+}
+
+.musicas-recomendadas-v2 h2 { margin-bottom: 16px; }
+
+.musica-recomendada-card:hover,
+.musica-recomendada-card.selecionada {
+  border-color: rgba(0, 200, 83, .45) !important;
+  background: rgba(0, 200, 83, .09) !important;
+  transform: none;
+}
+
+.musica-recomendada-acao {
+  color: #00c853;
+  font-weight: 900;
+  font-size: .85rem;
+}
+
+/* ===== PLAYER DEEZER CORRIGIDO ===== */
+
+/* =====================================================
+   CORREÇÕES FINAIS: favoritos, resenhas do perfil e player Deezer
+   ===================================================== */
+
+/* Favoritos sem estourar */
+
+/* Cards de resenha no perfil/minhas avaliações com visual de card e texto legível */
+
+/* Player Deezer sem sobreposição */
+
+/* home-navbar.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
+
+/* layout-cards.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
+
+/* player.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
+
+/* reviews.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
+
+/* profile-favorites.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
+
+/* overrides-responsive.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */

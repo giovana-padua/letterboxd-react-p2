@@ -1,0 +1,155 @@
+/* ===== home.css =====
+   Página inicial e seções exclusivas da Home.
+*/
+
+.home-fileiras { display: grid; gap: 34px; margin-top: 30px; }
+
+.home-fileiras {
+  margin-top: 28px;
+}
+
+.lb-hero-home {
+  margin: 38px 0 28px;
+  min-height: 190px;
+  padding: 42px;
+  border-radius: 24px;
+  border: 1px solid rgba(121,199,255,.16);
+  background:
+    radial-gradient(circle at 88% 20%, rgba(255,159,28,.23), transparent 20%),
+    linear-gradient(145deg, rgba(18,35,50,.96), rgba(12,24,34,.96));
+  box-shadow: 0 22px 60px rgba(0,0,0,.28);
+}
+
+.lb-hero-home h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(44px, 6vw, 78px);
+  font-weight: 950;
+  letter-spacing: -.06em;
+}
+
+.lb-hero-home p { color: #a9c8df; font-size: 1.18rem; max-width: 760px; }
+
+.lb-hero-home {
+  min-height: 230px !important;
+  margin: 34px 0 28px !important;
+  padding: 48px !important;
+  background:
+    linear-gradient(135deg, rgba(23,33,43,.96), rgba(17,24,32,.96)) !important;
+  border: 1px solid rgba(126, 153, 174, .22) !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+}
+
+.lb-hero-home h1 {
+  margin-top: 18px !important;
+  font-size: clamp(3rem, 6vw, 5.2rem) !important;
+  line-height: .95 !important;
+  letter-spacing: -.06em !important;
+}
+
+.lb-hero-home p {
+  color: #b5c7d6 !important;
+  max-width: 760px !important;
+  font-size: 1.05rem !important;
+}
+
+.home-clean {
+  background: #11171d;
+  min-height: 100vh;
+}
+
+.home-clean.container-lb,
+.pagina-home.container-lb {
+  max-width: none;
+  padding: 0;
+}
+
+.home-clean-hero {
+  min-height: 360px;
+  background-color: #17212b;
+  background-size: cover;
+  background-position: center 28%;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: relative;
+}
+
+.home-clean-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(255,255,255,.06), transparent 34%),
+    linear-gradient(90deg, rgba(17,23,29,.98), rgba(17,23,29,.72), rgba(17,23,29,.98));
+  pointer-events: none;
+}
+
+.home-clean-hero-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 28px;
+  padding-top: 52px;
+  padding-bottom: 36px;
+}
+
+.home-clean-copy {
+  max-width: 780px;
+}
+
+.home-clean-copy h1 {
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  line-height: .9;
+  letter-spacing: -0.07em;
+  color: #fff;
+  margin: 8px 0 14px;
+}
+
+.home-clean-copy p {
+  max-width: 650px;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  color: #c7d7e5;
+  margin: 0;
+}
+
+.home-clean-content {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.home-clean-carrosseis .card-midia {
+  width: 100%;
+}
+
+.home-clean-carrosseis .poster-box {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255,255,255,.16) inset, 0 8px 22px rgba(0,0,0,.28);
+}
+
+.home-clean-results {
+  margin-bottom: 46px;
+}
+
+.home-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(157, 184, 204, .35);
+  padding-bottom: 9px;
+  margin-bottom: 18px;
+}
+
+.home-section-title span {
+  color: #89a0b5;
+  font-size: .9rem;
+}
+
+.home-clean-results {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
