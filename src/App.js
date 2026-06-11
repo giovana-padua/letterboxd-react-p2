@@ -1,13 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
-import Filme from './filmes/Filme';
+import MinhasRotas from './routes/MinhasRotas';
 
-function App() {
-  return (
-    <div className="App">
-      <Filme nome="Blue"/>
-    </div>
-  );
+export default function App() {
+  return <MinhasRotas />;
 }
-
-export default App;
