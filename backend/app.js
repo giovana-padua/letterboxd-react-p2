@@ -14,7 +14,16 @@ const deezerRoutes = require('./routes/deezer.routes');
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json({ limit: '5mb' }));
 
 app.use(coreRoutes);

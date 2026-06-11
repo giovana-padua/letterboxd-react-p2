@@ -1,13 +1,16 @@
 require('dotenv').config();
+
 const app = require('./app');
 const { conectarBanco } = require('./config/database');
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV !== 'production') {
-  conectarBanco().then(() => {
-    app.listen(PORT, () => console.log('API rodando na porta ' + PORT));
+conectarBanco()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log('API rodando na porta ' + PORT);
+    });
+  })
+  .catch(() => {
+    process.exit(1);
   });
-}
-
-module.exports = app;
