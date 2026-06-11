@@ -1,0 +1,24 @@
+/* ===== moderation.css =====
+   Painel e ações de moderação/admin.
+*/
+
+.moderacao-lista { display: grid; gap: 12px; }
+
+.moderacao-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid rgba(121, 199, 255, .18);
+  background: rgba(7, 19, 29, .28);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.moderacao-item small { display: block; color: #a9c8df; margin-top: 4px; }
+
+.moderacao-acoes { display: flex; gap: 8px; }
+
+.moderacao-acoes button { padding: 9px 12px; border-radius: 10px; }
+
+.moderacao-acoes .btn-recusar { background: rgba(255,83,83,.18); color: #ffd1d1; }
