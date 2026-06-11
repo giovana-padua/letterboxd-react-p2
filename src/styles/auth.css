@@ -1,0 +1,92 @@
+/* ===== auth.css =====
+   Login, cadastro, recuperação de senha e validações.
+*/
+
+.container:has(> form.form) {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+.container:has(> form.form) h1,
+.container:has(> form.form) h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.container > form.form {
+  width: min(520px, 100%);
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px;
+}
+
+.container > form.form .campo-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.container > form.form input,
+.container > form.form textarea,
+.container > form.form select,
+.container > form.form button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.container > form.form .campo-ajuda,
+.container > form.form .campo-erro {
+  display: block;
+  width: 100%;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.container > form.form .campo-ajuda {
+  color: var(--texto-suave);
+}
+
+.container > form.form .campo-erro {
+  color: var(--erro);
+  font-weight: 700;
+}
+
+.container > form.form .input-erro {
+  border-color: var(--erro);
+  box-shadow: 0 0 0 4px rgba(255, 138, 138, .14);
+}
+
+.container:has(> form.form) p {
+  text-align: center;
+}
+
+.auth-link {
+  color: var(--verde);
+  font-weight: 900;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 620px) {
+  .container:has(> form.form) {
+    padding: 28px 16px;
+  }
+
+  .container > form.form {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+  }
+}
