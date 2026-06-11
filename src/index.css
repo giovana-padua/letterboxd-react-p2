@@ -1,20 +1,14 @@
 @import './styles/base.css';
+@import './styles/navbar.css';
 @import './styles/home.css';
 @import './styles/cards.css';
 @import './styles/swiper.css';
+@import './styles/favorites.css';
 @import './styles/player.css';
 @import './styles/details.css';
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import './styles/search.css';
+@import './styles/reviews.css';
+@import './styles/profile.css';
+@import './styles/auth.css';
+@import './styles/moderation.css';
+@import './styles/responsividade.css';
