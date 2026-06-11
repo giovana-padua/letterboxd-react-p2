@@ -5,7 +5,8 @@ async function conectarBanco() {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log('MongoDB conectado');
   } catch (erro) {
-    console.log('Erro no MongoDB:', erro.message);
+    console.error('Erro no MongoDB:', erro.message);
+    throw erro;
   }
 }
 
