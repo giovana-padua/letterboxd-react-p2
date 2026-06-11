@@ -1,0 +1,97 @@
+/* ===== favorites.css =====
+   Página e cards de favoritos.
+*/
+
+.favoritos-page { padding: 36px 0 70px; }
+
+.favoritos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 20px; }
+
+.favorito-card { position: relative; }
+
+.favorito-card .card-midia.card-letterboxd { width: 100%; min-width: 0; }
+
+.favorito-actions { display: flex; gap: 8px; margin-top: 10px; }
+
+.favorito-actions a, .favorito-actions button {
+  flex: 1;
+  text-align: center;
+  background: rgba(121,199,255,.12);
+  color: #d7ebff;
+  border: 1px solid rgba(121,199,255,.16);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.favorito-actions button { background: rgba(217,68,68,.22); color: #ffb8b8; }
+
+.detalhes-rating-box-v2,
+.detalhes-notas-card,
+.plataforma-card-v2,
+.faixa-item-v2,
+.album-mini-card,
+.favorito-card,
+.perfil-card {
+  background: #1b232d !important;
+  border-color: rgba(255,255,255,.10) !important;
+  box-shadow: none !important;
+}
+
+.favoritos-grid-clean,
+.favoritos-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 220px)) !important;
+  gap: 24px !important;
+  align-items: start;
+}
+
+.favorito-card-clean,
+.favorito-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.favorito-card .card-midia.card-letterboxd,
+.favorito-card .card-info,
+.favorito-card .card-meta-line,
+.favorito-card .poster-box {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.favorito-card .poster-box {
+  aspect-ratio: 2 / 3 !important;
+  height: auto !important;
+}
+
+.favorito-card .card-info h3,
+.favorito-card h3 {
+  color: #ffffff !important;
+  overflow-wrap: anywhere;
+}
+
+.favorito-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px !important;
+  margin-top: 12px !important;
+}
+
+.favorito-actions a,
+.favorito-actions button {
+  min-width: 0;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 48px;
+  padding: 10px 8px !important;
+  line-height: 1.2;
+  white-space: normal;
+}

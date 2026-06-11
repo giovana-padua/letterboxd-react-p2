@@ -1,0 +1,387 @@
+/* ===== swiper.css =====
+   Carrosséis, navegação horizontal e sliders.
+*/
+
+.carrossel-bloco { border-top: 1px solid rgba(121, 199, 255, .17); padding-top: 18px; }
+
+.carrossel-topo { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+
+.carrossel-topo h2 { font-size: 24px; color: var(--texto); letter-spacing: -.3px; }
+
+.carrossel-botoes { display: flex; gap: 8px; }
+
+.btn-carrossel {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 999px;
+  font-size: 28px;
+  line-height: 1;
+  background: rgba(121, 199, 255, .13);
+  border: 1px solid rgba(121, 199, 255, .20);
+}
+
+.btn-carrossel:hover { background: linear-gradient(135deg, var(--verde), var(--laranja)); color: #07131d; }
+
+.carrossel-lista {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 2px 18px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--verde) rgba(121,199,255,.12);
+}
+
+.carrossel-lista::-webkit-scrollbar { height: 9px; }
+
+.carrossel-lista::-webkit-scrollbar-track { background: rgba(121,199,255,.10); border-radius: 999px; }
+
+.carrossel-lista::-webkit-scrollbar-thumb { background: linear-gradient(90deg, var(--verde), var(--laranja)); border-radius: 999px; }
+
+.carousel-section {
+  margin: 44px 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 16px;
+}
+
+.carousel-header h2 {
+  color: #f5f8fb;
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.carousel-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00c030, #1f9cff);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.08);
+  background: linear-gradient(135deg, #ff9f1c, #00c030);
+}
+
+.carousel-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 2px 4px 18px;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.secao-carrossel {
+  position: relative;
+  margin: 46px 0 58px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(121, 199, 255, 0.16);
+}
+
+.carrossel-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.carrossel-topo h2 {
+  font-size: 1.65rem;
+  color: #f7fbff;
+  letter-spacing: -0.02em;
+}
+
+.botoes-carrossel {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.botoes-carrossel button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, var(--verde), var(--laranja));
+  color: #06121c;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.botoes-carrossel button:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.08);
+}
+
+.carrossel-moldura {
+  position: relative;
+  overflow: hidden;
+}
+
+.carrossel-moldura::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 86px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(7, 19, 29, 0.96));
+}
+
+.carrossel-lista {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 4px 10px 22px 2px;
+  scrollbar-width: none;
+}
+
+.carrossel-lista::-webkit-scrollbar {
+  display: none;
+}
+
+.container,
+.pagina-home,
+.home-fileiras,
+.secao-carrossel,
+.carrossel-moldura {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.carrossel-moldura {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carrossel-lista {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 190px;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 0 20px;
+  scrollbar-width: none;
+}
+
+.botoes-carrossel button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secao-carrossel {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 48px 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.carrossel-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+
+.carrossel-topo h2 { color: #fff; font-size: 1.55rem; font-weight: 900; letter-spacing: -.03em; }
+
+.botoes-carrossel { display: flex; gap: 10px; }
+
+.botoes-carrossel button {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  padding: 0;
+  color: #07131d;
+  background: linear-gradient(135deg, #00c853, #ff9f1c);
+  font-size: 30px;
+  font-weight: 950;
+}
+
+.carrossel-moldura { overflow: hidden; width: 100%; }
+
+.carrossel-lista {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 4px 18px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.secao-carrossel {
+  margin: 38px 0 52px !important;
+  padding-top: 24px !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.carrossel-topo {
+  margin-bottom: 16px !important;
+}
+
+.carrossel-topo h2 {
+  color: #fff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -.02em !important;
+}
+
+.botoes-carrossel button {
+  width: 36px !important;
+  height: 36px !important;
+  background: #2c3440 !important;
+  color: #dbe7f0 !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: none !important;
+  border-radius: 50% !important;
+  font-size: 1.5rem !important;
+}
+
+.botoes-carrossel button:hover {
+  background: #384452 !important;
+  color: #fff !important;
+  transform: translateY(-1px) !important;
+}
+
+.carrossel-moldura {
+  overflow: hidden !important;
+}
+
+.carrossel-moldura::after {
+  background: linear-gradient(90deg, transparent, var(--lm-bg-clean)) !important;
+  opacity: .85 !important;
+}
+
+.carrossel-lista {
+  gap: 22px !important;
+  padding: 4px 0 12px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x proximity !important;
+  scrollbar-width: none !important;
+}
+
+.carrossel-lista::-webkit-scrollbar {
+  display: none !important;
+}
+
+.carrossel-moldura-swiper {
+  overflow: hidden;
+}
+
+.carrossel-swiper {
+  width: 100%;
+  overflow: visible;
+  padding: 4px 4px 22px;
+}
+
+.carrossel-slide {
+  width: clamp(150px, 13vw, 205px) !important;
+  height: auto;
+}
+
+.carrossel-swiper .card-midia.card-letterboxd {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.carrossel-swiper .poster-box,
+.carrossel-swiper .card-letterboxd .poster-box {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 2 / 3;
+}
+
+.botoes-carrossel button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+.home-clean-carrosseis .secao-carrossel {
+  margin: 0 0 42px;
+  padding: 0;
+  border-top: 0;
+}
+
+.home-clean-carrosseis .carrossel-topo {
+  border-bottom: 1px solid rgba(157, 184, 204, .35);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+.home-clean-carrosseis .carrossel-topo h2,
+.home-section-title h2 {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: #b8cde0;
+  font-size: .95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.home-clean-carrosseis .botoes-carrossel button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1e2935;
+  border: 1px solid #2c3b4c;
+  color: #bfd4e7;
+  font-weight: 900;
+}
+
+.home-clean-carrosseis .botoes-carrossel button:hover {
+  background: #2f4053;
+  color: #fff;
+}

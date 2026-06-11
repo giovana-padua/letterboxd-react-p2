@@ -1,0 +1,457 @@
+/* ===== player.css =====
+   Player Deezer, preview de áudio e controles.
+*/
+
+.deezer-embed-card-v2 {
+  background: rgba(23,37,50,.88);
+  border: 1px solid rgba(121,199,255,.16);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.deezer-embed-card-v2 h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.deezer-embed-card-v2 iframe {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+  background: #000;
+}
+
+.faixas-com-player-v2 {
+  display: grid;
+  gap: 22px;
+}
+
+.faixa-item-v2.tocando {
+  border-color: rgba(0, 200, 83, 0.55);
+  background: rgba(0, 200, 83, 0.08);
+}
+
+.btn-ouvir-faixa-v2 {
+  color: #00c853;
+  background: transparent;
+  border: 0;
+  padding: 8px 10px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.btn-ouvir-faixa-v2:hover {
+  color: #07131d;
+  background: #00c853;
+  border-radius: 999px;
+  transform: none;
+  filter: none;
+}
+
+.player-faixa-v2 {
+  background: rgba(20, 34, 48, 0.92);
+  border: 1px solid rgba(121, 199, 255, 0.18);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+.player-faixa-v2 h3 {
+  margin: 8px 0 14px;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.player-faixa-v2 iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deezer-audio-player {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.deezer-player-clean {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(125, 165, 205, 0.28);
+  border-radius: 18px;
+  background: rgba(19, 32, 45, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.24);
+}
+
+.deezer-player-compacto {
+  max-width: 560px;
+  padding: 0.85rem 1rem;
+}
+
+.deezer-player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.deezer-player-info img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.deezer-player-info strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.deezer-player-info small {
+  display: block;
+  color: #afd4ff;
+  margin-top: 0.15rem;
+}
+
+.deezer-player-controles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.deezer-play-btn {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: #00e060;
+  color: #061018;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 224, 96, 0.25);
+}
+
+.deezer-play-btn:hover {
+  filter: brightness(1.08);
+}
+
+.deezer-volume {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #afd4ff;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.deezer-volume input {
+  width: 110px;
+  accent-color: #00e060;
+}
+
+.faixa-item-v2 .btn-ouvir-faixa-v2 {
+  min-width: 42px;
+  border-radius: 999px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.deezer-player-clean {
+  max-width: 520px;
+  margin: 16px 0 0;
+  padding: 13px 16px;
+  border: 1px solid rgba(76, 128, 164, .45);
+  background: rgba(13, 28, 42, .9);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.deezer-player-compacto {
+  max-width: 410px;
+  grid-template-columns: auto 1fr;
+  padding: 12px 14px;
+}
+
+.deezer-player-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.deezer-player-info img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.deezer-player-info strong,
+.deezer-player-info small {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deezer-player-controles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deezer-play-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: #f3f5f7;
+  color: #0f1c29;
+  font-weight: 900;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deezer-volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #b5cce0;
+  font-size: .78rem;
+}
+
+.deezer-volume input {
+  max-width: 95px;
+}
+
+.btn-ouvir-faixa-v2 {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: #00d95f;
+  color: #04130b;
+  font-weight: 900;
+}
+
+.deezer-player-clean {
+  width: min(560px, 100%);
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(17, 31, 44, 0.94);
+  border: 1px solid rgba(121, 199, 255, 0.24);
+  backdrop-filter: blur(12px);
+}
+
+.deezer-player-compacto {
+  width: min(560px, 100%);
+}
+
+.deezer-player-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+
+.deezer-player-info img {
+  width: 76px;
+  height: 76px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.deezer-player-info div {
+  min-width: 0;
+}
+
+.deezer-player-info strong {
+  display: block;
+  color: white;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deezer-player-info small {
+  display: block;
+  color: #b7c8d8;
+  margin-top: 4px;
+}
+
+.player-custom-real {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 132px;
+  align-items: center;
+  gap: 18px;
+}
+
+.deezer-play-btn {
+  width: 58px;
+  height: 58px;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 0 !important;
+  background: #f6fbff !important;
+  color: #07131d !important;
+  font-size: 1.28rem;
+  font-weight: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.deezer-play-btn:hover {
+  transform: scale(1.04);
+  filter: none;
+}
+
+.deezer-tempo-area {
+  min-width: 0;
+}
+
+.deezer-progress-range,
+.deezer-volume-range {
+  width: 100%;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  accent-color: #00c853;
+}
+
+.deezer-progress-range {
+  background: linear-gradient(to right, #ffffff var(--progresso), rgba(255,255,255,.22) var(--progresso));
+}
+
+.deezer-tempos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #9fb7c8;
+  font-size: .78rem;
+}
+
+.deezer-volume-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deezer-volume-area span {
+  width: 24px;
+  text-align: center;
+}
+
+.deezer-volume-range {
+  max-width: 92px;
+}
+
+.preview-player {
+    width: 100%;
+    max-width: 560px;
+
+    background: rgba(8, 20, 30, 0.92);
+
+    border: 1px solid rgba(0,255,120,.25);
+    border-radius: 22px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.preview-volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-volume input {
+    width: 100%;
+}
+
+.preview-player {
+  width: min(560px, 100%) !important;
+  max-width: 560px !important;
+  margin-top: 22px !important;
+  padding: 18px !important;
+  border-radius: 22px !important;
+  background: rgba(8, 20, 30, 0.92) !important;
+  border: 1px solid rgba(0,255,120,.25) !important;
+  box-shadow: 0 0 0 1px rgba(0,255,120,.08), 0 18px 45px rgba(0,0,0,.30) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  overflow: hidden !important;
+}
+
+.preview-player-compacto {
+  width: min(560px, 100%) !important;
+}
+
+.preview-progress,
+.preview-volume input {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 6px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  accent-color: #00c853;
+  cursor: pointer;
+}
+
+.preview-volume {
+  display: grid !important;
+  grid-template-columns: 24px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  color: #dce8f2 !important;
+}
+
+.preview-volume span {
+  width: 24px;
+  text-align: center;
+}
+
+.preview-player audio {
+  display: none !important;
+}

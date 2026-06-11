@@ -1,0 +1,392 @@
+/* ===== details.css =====
+   Página de detalhes, abas, relações e informações da mídia.
+*/
+
+.detalhes-layout { display: grid; gap: 22px; }
+
+.detalhes-card { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+
+.detalhes-poster img, .detalhes-poster .poster-vazio { width: 100%; height: 330px; object-fit: cover; border-radius: 16px; }
+
+.detalhes-info h1 { font-size: clamp(30px, 4vw, 48px); margin: 10px 0; }
+
+/* ===== Ajustes Filmes e Músicas: carrossel estilo vitrine + detalhes ===== */
+
+.pagina-detalhes {
+  padding-bottom: 40px;
+}
+
+.detalhes-hero {
+  min-height: 560px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(121, 199, 255, .13);
+  padding: 46px 0;
+}
+
+.detalhes-hero-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr 270px;
+  gap: 34px;
+  align-items: start;
+}
+
+.detalhes-poster-principal img,
+.detalhes-poster-principal .poster-vazio {
+  width: 260px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(121, 199, 255, .25);
+  box-shadow: 0 20px 38px rgba(0,0,0,.42);
+}
+
+.detalhes-conteudo h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1;
+  margin: 10px 0 12px;
+}
+
+.detalhes-subinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: #b8d6ec;
+  font-size: 1.04rem;
+  margin-bottom: 22px;
+}
+
+.detalhes-descricao {
+  color: #d8e6f0;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 22px;
+}
+
+.detalhes-bloco h3 {
+  margin: 20px 0 6px;
+  color: #ffffff;
+}
+
+.detalhes-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.detalhes-rating-box {
+  background: rgba(17, 31, 44, .92);
+  border: 1px solid rgba(121, 199, 255, .18);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--sombra);
+}
+
+.detalhes-rating-box h3 {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #b9d5e8;
+  font-size: .9rem;
+  margin-bottom: 16px;
+}
+
+.detalhes-rating-box button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.detalhes-grid-baixo {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 24px;
+  margin-top: -54px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Filmes e Músicas: ajustes finais de Home, perfil, favoritos e detalhes ===== */
+
+.pagina-detalhes-v2 { min-height: 100vh; }
+
+.detalhes-hero-v2 {
+  min-height: 560px;
+  background-size: cover;
+  background-position: center;
+  padding: 34px 0 46px;
+}
+
+.detalhes-v2-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 310px;
+  gap: 38px;
+  align-items: start;
+}
+
+.detalhes-poster-v2 img, .detalhes-poster-v2 .poster-vazio {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 22px 55px rgba(0,0,0,.45);
+  border: 1px solid rgba(121,199,255,.22);
+}
+
+.detalhes-poster-actions { display: grid; gap: 10px; margin-top: 14px; }
+
+.detalhes-notas-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20,34,48,.85);
+  border: 1px solid rgba(121,199,255,.16);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #bfd4e6;
+}
+
+.detalhes-notas-card strong { color: #ff9f1c; }
+
+.detalhes-info-v2 h1 {
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 950;
+  letter-spacing: -.06em;
+  margin: 12px 0 10px;
+}
+
+.detalhes-meta-v2 { display: flex; gap: 14px; flex-wrap: wrap; color: #a9c8df; font-size: 1.05rem; }
+
+.detalhes-meta-v2 span + span::before { content: '·'; margin-right: 14px; color: #597285; }
+
+.detalhes-tagline-v2 { color: #ff9f1c; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; margin-top: 28px; }
+
+.detalhes-desc-v2 { margin-top: 20px; max-width: 760px; color: #d5e4ef; font-size: 1.12rem; line-height: 1.75; }
+
+.detalhes-chips-v2 { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+
+.detalhes-chips-v2 span {
+  background: rgba(0,200,83,.17);
+  color: #9dffc0;
+  border: 1px solid rgba(0,200,83,.24);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 800;
+}
+
+.detalhes-bloco-suave { margin-top: 30px; }
+
+.detalhes-rating-box-v2 {
+  background: rgba(20,34,48,.88);
+  border: 1px solid rgba(121,199,255,.20);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 45px rgba(0,0,0,.28);
+}
+
+.detalhes-rating-box-v2 h3 { text-transform: uppercase; letter-spacing: .12em; color: #cde9ff; }
+
+.detalhes-v2-body { padding: 36px 0 70px; }
+
+.detalhes-tabs-v2 {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.detalhes-tabs-v2 button {
+  background: transparent;
+  color: #9fb7c8;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  padding: 14px 18px;
+}
+
+.detalhes-tabs-v2 button.active { color: #00c853; border-bottom-color: #00c853; }
+
+.lista-faixas-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.faixa-item-v2 {
+  background: rgba(23,37,50,.88);
+  border: 1px solid rgba(121,199,255,.14);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.faixa-item-v2 a:first-child { flex: 1; color: #d7ebff; }
+
+.faixa-item-v2 small { margin-left: 8px; color: #9fb7c8; }
+
+.faixa-item-v2 a:last-child { color: #00c853; font-weight: 900; }
+
+.album-mini-card {
+  display: block;
+  background: rgba(23,37,50,.88);
+  border: 1px solid rgba(121,199,255,.16);
+  border-radius: 14px;
+  padding: 10px;
+  height: 100%;
+}
+
+.album-mini-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+
+.album-mini-card strong { display: block; color: #fff; }
+
+.album-mini-card small { color: #9fb7c8; }
+
+.plataformas-grid-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+
+.plataforma-card-v2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(23,37,50,.88);
+  border: 1px solid rgba(121,199,255,.16);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.plataforma-card-v2 img { width: 42px; height: 42px; border-radius: 10px; }
+
+.plataforma-card-v2 strong { display: block; color: #fff; }
+
+.plataforma-card-v2 span { color: #9fb7c8; }
+
+/* Detalhes: menos brilho e mais leitura */
+
+.pagina-detalhes-v2,
+.detalhes-hero-v2 {
+  background-color: var(--lm-bg-clean) !important;
+}
+
+/* Player Deezer dentro da página de detalhes */
+
+.onde-ouvir-wrap-v2 {
+  display: grid;
+  gap: 22px;
+}
+
+/* =====================================================
+   Detalhes musicais + relações entre filmes e músicas
+   ===================================================== */
+
+.pagina-detalhes-musical-clean .detalhes-hero-v2 {
+  background-size: cover;
+  background-position: center;
+}
+
+.pagina-detalhes-musical-clean .detalhes-v2-grid {
+  grid-template-columns: 300px minmax(0, 1fr) 290px;
+  align-items: start;
+}
+
+.pagina-detalhes-musical-clean .detalhes-info-v2 h1 {
+  max-width: 820px;
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  letter-spacing: -0.06em;
+  line-height: .92;
+}
+
+.pagina-detalhes-musical-clean .detalhes-desc-v2 {
+  max-width: 760px;
+  font-size: 1.05rem;
+}
+
+.pagina-detalhes-musical-clean .detalhes-poster-v2 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pagina-detalhes-musical-clean .detalhes-notas-card strong {
+  color: #f6a21a;
+  font-size: .95rem;
+}
+
+.lista-faixas-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.faixa-item-v2 {
+  background: #182331;
+  border: 1px solid rgba(109, 139, 166, .35);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.faixa-item-v2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.faixa-item-v2 small {
+  color: #aac4dc;
+  margin-left: 6px;
+}
+
+.relacoes-laterais-card {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(151, 177, 201, .22);
+}
+
+.relacoes-laterais-card h4 {
+  color: #dcefff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.relacoes-laterais-lista {
+  display: grid;
+  gap: 10px;
+}
+
+.relacoes-destaque-bloco {
+  margin-bottom: 28px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(88, 128, 160, .36);
+  background: rgba(18, 28, 38, .78);
+}
+
+.relacoes-titulo-linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: end;
+  border-bottom: 1px solid rgba(146, 175, 202, .24);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.relacoes-titulo-linha h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.relacoes-titulo-linha span {
+  color: #9fb6ca;
+  font-size: .85rem;
+}
+
+.relacoes-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+/* details.css: estilos mantidos temporariamente em base.css para corrigir blocos CSS. */
